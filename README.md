@@ -1,73 +1,87 @@
-# Wirodayan Direct Marketplace - Setup Guide
+# Wirodayan Direct Marketplace - Production Setup Guide
 
-A high-contrast, artistic, and minimalist e-commerce platform built with Laravel 11. Specifically optimized for XAMPP/Windows environments.
+A premium, high-contrast, artistic e-commerce platform built with Laravel 11. 
 
-## 🚀 Setup Steps
+## 🌐 Server Requirements
+- PHP 8.2 or higher
+- Extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML, **GD** (Critical for Image Processing)
+- MySQL 8.0+ or MariaDB 10.4+
+- Nginx or Apache with `mod_rewrite` enabled
 
-Follow these steps to get the project running on your local server:
+## 🚀 Deployment Steps (Production)
 
-### 1. Requirements
-*   PHP 8.2 or higher
-*   Composer
-*   MySQL/MariaDB (via XAMPP)
-*   Apache (via XAMPP)
-
-### 2. Physical Placement
-Copy the whole project folder into your XAMPP `htdocs` directory.
-Example path: `C:\xampp\htdocs\novly-ecommerce`
-
-### 3. Dependency Installation
-Open terminal/cmd inside the project folder and run:
+### 1. Upload & Install
+Clone the repository to your server and navigate to the root directory:
 ```bash
-composer install
+git clone https://github.com/detitanbwi/Ecommerce-Novly.git .
+composer install --optimize-autoloader --no-dev
 ```
 
-### 4. Database Configuration
-1.  Create a new database named `ecommerce_novly` in phpMyAdmin.
-2.  Duplicate `.env.example` to `.env` (already done in this repo).
-3.  Ensure database credentials in `.env` are correct:
-    ```env
-    DB_DATABASE=ecommerce_novly
-    DB_USERNAME=root
-    DB_PASSWORD=
-    ```
+### 2. Environment Configuration
+Copy `.env.example` to `.env` and update the following:
+```env
+APP_NAME="Wirodayan Direct"
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://your-domain.com
 
-### 5. Migration & Seeding
-Populate the database with tables and sample data:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_db_name
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+```
+Generate the application key:
 ```bash
-php artisan migrate --seed
+php artisan key:generate
 ```
-*Default Admin Login:* `admin@novly.com` / `password`
 
-### 6. Storage Link (CRITICAL for Windows)
-To ensure images are displayed correctly, connect the storage folder:
-```cmd
-rmdir public\storage
-mklink /J public\storage storage\app\public
-```
-*Note: Run as administrator if `mklink` fails.*
-
-### 7. Optimization
-Clear all caches to ensure the new `APP_URL` and routes are active:
+### 3. Permissions
+Ensure the web server has write access to:
 ```bash
-php artisan config:clear
-php artisan cache:clear
-php artisan view:clear
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data . # For Ubuntu/Nginx
 ```
 
-## 🛠️ Key Configurations (Applied)
+### 4. Database Initialization
+Run migrations and seed the initial categories and admin account:
+```bash
+php artisan migrate --force --seed
+```
+*Note: Default admin: `admin@novly.com` / `password`.*
 
-*   **Subdirectory Support**: `APP_URL` is configured to `http://localhost/novly-ecommerce`.
-*   **Root Entry Point**: The project entry point has been moved to the root `index.php` so you can access the site directly via `http://localhost/novly-ecommerce/` without typing `/public/`.
-*   **Image Processing**: The system automatically converts all uploads to **WebP** for maximum performance.
+### 5. Media & Storage Link
+Initialize the storage system:
+```bash
+php artisan storage:link
+```
+If you are on a local Windows server (XAMPP), use the Junction command:
+`mklink /J public\storage storage\app\public`
 
-## 📦 Features
-- [x] AJAX Category Filtering & Pagination (No reload)
-- [x] WhatsApp Checkout Integration
-- [x] Interactive 3-Slot Image Upload with Preview
-- [x] Product Slideshows on Catalog Cards
-- [x] External Marketplace Links (Shopee/Tokopedia)
-- [x] High-Contrast Artistic Design with Batik & Scribble Accents
+### 6. Production Optimization
+Run these commands to speed up the application:
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## 🛠️ Web Server Configuration
+
+### Standard (Nginx)
+Point your root to the `/public` directory of the project.
+```nginx
+root /var/www/novly-ecommerce/public;
+index index.php index.html;
+
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+```
+
+### Subdirectory / Shared Hosting (Apache)
+This project is pre-configured with a root `index.php` and `.htaccess` to support running from any directory. If your server doesn't allow changing the document root to `/public`, the application will still work seamlessly from the root folder.
 
 ---
 Developed by **Antigravity** for Novly Ecommerce.
