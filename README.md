@@ -1,58 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Wirodayan Direct Marketplace - Setup Guide
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A high-contrast, artistic, and minimalist e-commerce platform built with Laravel 11. Specifically optimized for XAMPP/Windows environments.
 
-## About Laravel
+## 🚀 Setup Steps
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Follow these steps to get the project running on your local server:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Requirements
+*   PHP 8.2 or higher
+*   Composer
+*   MySQL/MariaDB (via XAMPP)
+*   Apache (via XAMPP)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Physical Placement
+Copy the whole project folder into your XAMPP `htdocs` directory.
+Example path: `C:\xampp\htdocs\novly-ecommerce`
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 3. Dependency Installation
+Open terminal/cmd inside the project folder and run:
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer install
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 4. Database Configuration
+1.  Create a new database named `ecommerce_novly` in phpMyAdmin.
+2.  Duplicate `.env.example` to `.env` (already done in this repo).
+3.  Ensure database credentials in `.env` are correct:
+    ```env
+    DB_DATABASE=ecommerce_novly
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-## Contributing
+### 5. Migration & Seeding
+Populate the database with tables and sample data:
+```bash
+php artisan migrate --seed
+```
+*Default Admin Login:* `admin@novly.com` / `password`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 6. Storage Link (CRITICAL for Windows)
+To ensure images are displayed correctly, connect the storage folder:
+```cmd
+rmdir public\storage
+mklink /J public\storage storage\app\public
+```
+*Note: Run as administrator if `mklink` fails.*
 
-## Code of Conduct
+### 7. Optimization
+Clear all caches to ensure the new `APP_URL` and routes are active:
+```bash
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🛠️ Key Configurations (Applied)
 
-## Security Vulnerabilities
+*   **Subdirectory Support**: `APP_URL` is configured to `http://localhost/novly-ecommerce`.
+*   **Root Entry Point**: The project entry point has been moved to the root `index.php` so you can access the site directly via `http://localhost/novly-ecommerce/` without typing `/public/`.
+*   **Image Processing**: The system automatically converts all uploads to **WebP** for maximum performance.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📦 Features
+- [x] AJAX Category Filtering & Pagination (No reload)
+- [x] WhatsApp Checkout Integration
+- [x] Interactive 3-Slot Image Upload with Preview
+- [x] Product Slideshows on Catalog Cards
+- [x] External Marketplace Links (Shopee/Tokopedia)
+- [x] High-Contrast Artistic Design with Batik & Scribble Accents
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+Developed by **Antigravity** for Novly Ecommerce.

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wirodayan Direct - Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "on-primary-container": "#dad7ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "tertiary": "#7e3000",
+                    "primary": "#3525cd",
+                    "surface": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#0f0069",
+                    "secondary": "#58579b",
+                    "on-surface-variant": "#464555",
+                    "on-tertiary-fixed": "#351000",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "background": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-primary": "#c3c0ff",
+                    "outline": "#777587",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary-container": "#ffd2be",
+                    "surface-tint": "#4d44e3",
+                    "on-secondary-container": "#454386",
+                    "on-secondary-fixed-variant": "#413f82",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "on-secondary-fixed": "#140f54",
+                    "tertiary-container": "#a44100",
+                    "secondary-fixed": "#e2dfff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "tertiary-fixed": "#ffdbcc",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#4f46e5",
+                    "secondary-container": "#b6b4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen pt-24">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl dark:bg-gray-900/80 shadow-[0_30px_60px_-15px_rgba(79,70,229,0.03)] transition-all duration-300">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-gray-900 dark:text-white tracking-tighter uppercase">Wirodayan Direct</span>
+</div>
+<div class="hidden md:flex gap-8 items-center font-manrope tracking-tight font-bold text-sm">
+<a class="text-indigo-600 font-bold border-b-2 border-indigo-600 pb-1" href="#">Shop</a>
+<a class="text-gray-500 font-medium hover:text-indigo-600 transition-colors duration-300" href="#">Editorial</a>
+<a class="text-gray-500 font-medium hover:text-indigo-600 transition-colors duration-300" href="#">Curated</a>
+</div>
+<div class="flex items-center gap-6 text-indigo-600 dark:text-indigo-400">
+<button class="focus-within:ring-2 focus-within:ring-indigo-500 scale-98 hover:text-indigo-600 transition-colors duration-300 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="focus-within:ring-2 focus-within:ring-indigo-500 scale-98 hover:text-indigo-600 transition-colors duration-300 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="focus-within:ring-2 focus-within:ring-indigo-500 scale-98 hover:text-indigo-600 transition-colors duration-300 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-screen-2xl mx-auto px-6 md:px-12 py-12">
+<!-- Header -->
+<header class="mb-16">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6">The Catalog</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl font-medium leading-relaxed">Curated essentials across literature, real estate, digital experiences, and agricultural hardware.</p>
+</header>
+<!-- Category Filters -->
+<div class="flex flex-wrap gap-4 mb-16">
+<button class="px-6 py-3 bg-primary-container text-on-primary rounded-md font-bold tracking-wide text-sm transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(79,70,229,0.4)]">All</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-md font-bold tracking-wide text-sm hover:bg-surface-variant transition-colors duration-300">Books</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-md font-bold tracking-wide text-sm hover:bg-surface-variant transition-colors duration-300">Property</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-md font-bold tracking-wide text-sm hover:bg-surface-variant transition-colors duration-300">Digital Invitations</button>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface-variant rounded-md font-bold tracking-wide text-sm hover:bg-surface-variant transition-colors duration-300">Chicken Coops</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+<!-- Product 1 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden bg-surface-container-low rounded-lg shadow-[0_30px_60px_-15px_rgba(17,24,39,0.03)]">
+<img alt="Book Cover" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Hardcover book with minimalist cover design resting on clean white table with soft natural lighting and sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB65wlhfu-JWZPb6Pg7xTKEYQAILvrmbdIu8K5dGpRomeQGboFpKTYd0930k2J3DK-8sq9k9d6cUFx8Z1B-iNggq90CQJY9QzZWUGqnJfUWe40hOdPsrcna6um7FrdviuUsTdbkXknr37cYaVy3kJ9KGC7rFWYqN9p8tKG2buPnumhp6QbThve_DO2qEeukKoBsALg2w6UO2AFX0lgQ27kjD9bpX8BT8Oc3PorvFDEBitm_r829xzVxt9kqLMiPwYlWVz0MhMslDKTL"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">Books</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">The Architecture of Silence</h3>
+<div class="flex justify-between items-end mt-4">
+<p class="text-lg font-extrabold text-on-surface">Rp 250.000</p>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-outline-variant hover:text-primary transition-colors" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden bg-surface-container-low rounded-lg shadow-[0_30px_60px_-15px_rgba(17,24,39,0.03)]">
+<img alt="Modern Villa" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Modern minimalist villa exterior with clean white walls large windows and infinity pool under bright blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn29dhRqbTRofLu8da0gBPb7wJ2G3-weODpROrW3_RE5o_FzxZxH3iqp0dI2OCmrpfq90Clj1aGFQDXNEXPqNPpA3lRBOQJKqI6PVCKlrm23MjQJ3fEfqM_Tr8wEYrPYKXi72DQxzc9osqA3lMGZk5soPjoPX959Xl9DPoHc3-DTDDx5XtTqY6SFGKsrveF0Ji8WLW95mOZCABC5O9VrsWPHt21J6WfkgMWpvDhzt_-vlqaTKapu-jBQNe5QzEWN7ZvCCq2c31reaZ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">Property</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">Villa Asmara, Ubud</h3>
+<div class="flex justify-between items-end mt-4">
+<p class="text-lg font-extrabold text-on-surface">Rp 4.5B</p>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-outline-variant hover:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden bg-surface-container-low rounded-lg shadow-[0_30px_60px_-15px_rgba(17,24,39,0.03)]">
+<div class="w-full h-full bg-gradient-to-br from-surface-container-low to-surface-container flex items-center justify-center p-8 transform group-hover:scale-105 transition-transform duration-700 ease-out">
+<div class="w-full aspect-[3/4] bg-white shadow-xl rounded-md p-6 flex flex-col items-center justify-center border border-outline-variant/20">
+<h4 class="font-serif text-2xl mb-2 text-center text-on-surface">A &amp; B</h4>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase mb-4">Are getting married</p>
+<div class="w-12 h-[1px] bg-outline-variant/50 mb-4"></div>
+<p class="text-xs text-on-surface-variant">24 . 10 . 2024</p>
+</div>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">Digital</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">Minimalist Wedding Invite</h3>
+<div class="flex justify-between items-end mt-4">
+<p class="text-lg font-extrabold text-on-surface">Rp 150.000</p>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-outline-variant hover:text-primary transition-colors" data-icon="link">link</span>
+</div>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[4/5] mb-6 overflow-hidden bg-surface-container-low rounded-lg shadow-[0_30px_60px_-15px_rgba(17,24,39,0.03)]">
+<img alt="Chicken Coop" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Premium wooden chicken coop with modern design in lush green garden setting with soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWZC6lz3X4S2Sl3U2sZA1_WKyWPRNY7c5UfjC-WyJbrhlJa3_134UKm2jvEyY7dtsZ-vSZx2bZCJ-L4tjkRqnBFeQIqmDAvAjl7iNL_kdqxv3wwqOm2Z4gtkNZ3EMErnjL75RZ49gp0qOz05BtrQpy1GdDKtrS_-zR9qdWMOByca0dU3B2ELBhBBq47bKa0GU6vUh0gSG93a8yXZDT0uokwS-_YmloZpvGcoGh96A9NlgtIXRPh2EU-fWDiuTnGSbDmLgWQqILNniv"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/90 backdrop-blur-md text-on-surface text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">Hardware</span>
+</div>
+</div>
+<h3 class="text-xl font-bold text-on-surface leading-tight mb-2 group-hover:text-primary transition-colors">The Urban Homestead Coop</h3>
+<div class="flex justify-between items-end mt-4">
+<p class="text-lg font-extrabold text-on-surface">Rp 3.200.000</p>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-outline-variant hover:text-primary transition-colors" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+</body></html>

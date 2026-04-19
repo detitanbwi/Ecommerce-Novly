@@ -15,11 +15,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Admin User
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin Novly',
+            'email' => 'admin@novly.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        // Categories
+        $categories = [
+            'Books',
+            'Property',
+            'Digital Invitations',
+            'Chicken Coops'
+        ];
+
+        foreach ($categories as $category) {
+            \App\Models\Category::create([
+                'name' => $category,
+                'slug' => \Illuminate\Support\Str::slug($category)
+            ]);
+        }
+
+        // Settings
+        \App\Models\Setting::create([
+            'key' => 'whatsapp_number',
+            'value' => '6281234567890' // Default WA
         ]);
     }
 }

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wirodayan Direct - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "on-primary-container": "#dad7ff",
+                    "on-error": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "tertiary": "#7e3000",
+                    "primary": "#3525cd",
+                    "surface": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#0f0069",
+                    "secondary": "#58579b",
+                    "on-surface-variant": "#464555",
+                    "on-tertiary-fixed": "#351000",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-highest": "#e2e2e2",
+                    "background": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-primary": "#c3c0ff",
+                    "outline": "#777587",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary-container": "#ffd2be",
+                    "surface-tint": "#4d44e3",
+                    "on-secondary-container": "#454386",
+                    "on-secondary-fixed-variant": "#413f82",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c7c4d8",
+                    "primary-fixed": "#e2dfff",
+                    "on-secondary-fixed": "#140f54",
+                    "tertiary-container": "#a44100",
+                    "secondary-fixed": "#e2dfff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "tertiary-fixed": "#ffdbcc",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#4f46e5",
+                    "secondary-container": "#b6b4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl dark:bg-gray-900/80 shadow-[0_30px_60px_-15px_rgba(79,70,229,0.03)] border-b-0">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-xl font-black text-gray-900 dark:text-white tracking-tighter uppercase font-headline" href="#">Wirodayan Direct</a>
+<div class="hidden md:flex gap-8">
+<a class="font-manrope tracking-tight font-bold text-sm text-gray-500 font-medium hover:text-indigo-600 transition-colors duration-300" href="#">Shop</a>
+<a class="font-manrope tracking-tight font-bold text-sm text-gray-500 font-medium hover:text-indigo-600 transition-colors duration-300" href="#">Editorial</a>
+<a class="font-manrope tracking-tight font-bold text-sm text-gray-500 font-medium hover:text-indigo-600 transition-colors duration-300" href="#">Curated</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center text-gray-500 gap-4">
+<button class="hover:text-indigo-600 transition-colors duration-300 focus-within:ring-2 focus-within:ring-indigo-500 scale-98">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:text-indigo-600 transition-colors duration-300 focus-within:ring-2 focus-within:ring-indigo-500 scale-98">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+<div class="md:hidden">
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto min-h-screen flex flex-col md:flex-row gap-16 lg:gap-24">
+<!-- Left: Image Gallery (Asymmetric & High Contrast) -->
+<div class="w-full md:w-1/2 flex flex-col gap-8">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
+<img alt="Product Image Main" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="High quality studio shot of a red Nike sneaker floating against a minimalist pure white background with dramatic directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFgugI3-ytFyc6E3-pGZuN4227kUa7TzCxAcTAt0qHIefQWABza6y3UT2uuabW-1yc-gn9Ru94kBjxP8lJu0cn35FVDwVPr00oHP3ifRGepeJFbpiDz_jfXlYvwEFrD-H2ACx2z366BPr_huN8MMiKAj2ew_wq0dBvG5VXIJfHWunwgwIdmCtSDiJRIfOhNW-YUaYM9wQAGxPK6IJkuAc9pdakmoBoyynlH02PFPwjS0eSLcyOFN0ubrqOxfFzIibKSjrn1TM73dOx"/>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden cursor-pointer border-b-2 border-primary-container">
+<img alt="Thumbnail 1" class="object-cover w-full h-full" data-alt="Close up detail shot of the red sneaker texture and stitching under bright studio lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABhkGMN9KWvAWbKpOlXZFOW3x8EoJKvy2_ObjaB2M3f_t8_fLAPzxpXysPTcfiiT6NZRBvN3EVfLrLa7icuzT9TUF8YxW5aAJ8CZ9H5QAZ-eLTOvr68iEgmmnzpPWiNF969ck0H8WrpJdiNZvvhARC4NPaUuYbCvZIzbsPDURyTjQ5TBfgciY1AqXZO1tdlZD5t0gYy3UokPwGgRLOsPSNiQxI67xhB8zRAGz8NvtGmRcqheWeHof0x5zR-rbNKXIgQ4TM4lUP4_i8"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<img alt="Thumbnail 2" class="object-cover w-full h-full" data-alt="Side profile shot of the sneaker showing the sole profile against white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXcraQqb-Q0vXd_FgzMFze5NuPfs5sM4yADr-5L8g5GaAQfvogIacURsgBqD77RnZQfK4Tn-fH-V4ojLQRRCe8cD6-A9Vc3-tamwg4X5se7eJ9ZoHf_KlyWpWWhDAqMJJWnI4jPMa772R2gl98oTXZzpCBVEEEfJTjuuRY00a_aNBgAtj5fjNQVtN1lfkoAEzY5mJgvO7sbFHRkB6HTNlOaNsL3moeH1aIYOuwU359Q7RpO3yL-sS4B0I50JSnWJxzo2s1btficH8V"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container-low rounded-lg overflow-hidden cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<img alt="Thumbnail 3" class="object-cover w-full h-full" data-alt="Top down view of the sneaker showing the laces and interior padding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN4oPK9et_OPWv3rGWyE0kjXkzchRIfvCfyxzbVwnBXq02w6YdXV7sk44WQQxcWp2WTi6JEBYIrysBV9jgdppXPQThM_FFnOm8UtZr4186kffDkzvQOeadPIAEpZV1CkAtv_PwAdR7IqsgOdn3tcuYAczUyyCi68J2FY2g5bz0gTPvu6M1Ku7okwtU_sFNQ0_jjCXsIodOjRqhFOdMLyo-UfhDY2yVStDeOQjWwn0rzA9Nf5XmfYjcPqCE_ArU_gf79gq03rNAE3e_"/>
+</div>
+</div>
+</div>
+<!-- Right: Product Info & Actions -->
+<div class="w-full md:w-1/2 flex flex-col justify-center">
+<div class="mb-4">
+<span class="font-label text-sm uppercase tracking-[0.05em] text-on-surface-variant font-bold">Footwear / Edition</span>
+</div>
+<h1 class="font-headline text-4xl lg:text-5xl font-extrabold tracking-[-0.02em] text-on-surface mb-6 leading-tight">
+                AeroGlide Phantom Red
+            </h1>
+<p class="font-body text-lg text-on-surface-variant mb-12 leading-relaxed max-w-xl">
+                Engineered for weightless movement. The Phantom Red edition features an ultra-responsive foam midsole encased in a breathable, seamless mesh upper. A study in minimalist velocity.
+            </p>
+<!-- Specs Grid (No borders, Tonal shifts) -->
+<div class="grid grid-cols-2 gap-x-8 gap-y-6 mb-12">
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-outline mb-1">Color</span>
+<span class="font-body font-semibold text-on-surface">Crimson / Pure White</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-outline mb-1">Material</span>
+<span class="font-body font-semibold text-on-surface">Knit Mesh / Phylon</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-outline mb-1">SKU</span>
+<span class="font-body font-semibold text-on-surface">AG-PHR-001</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-outline mb-1">Availability</span>
+<span class="font-body font-semibold text-primary-container">In Stock</span>
+</div>
+</div>
+<!-- Size Selection (Chips) -->
+<div class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-sm uppercase tracking-[0.05em] text-on-surface font-bold">Select Size (EU)</span>
+<button class="font-body text-sm text-on-surface-variant hover:text-on-surface border-b border-on-surface-variant hover:border-on-surface transition-colors">Size Guide</button>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-3 rounded-lg bg-surface-container-high text-on-surface-variant font-body font-semibold hover:bg-surface-container-highest transition-colors">40</button>
+<button class="px-6 py-3 rounded-lg bg-surface-container-high text-on-surface-variant font-body font-semibold hover:bg-surface-container-highest transition-colors">41</button>
+<button class="px-6 py-3 rounded-lg bg-primary-container text-on-primary font-body font-semibold shadow-[0_10px_30px_-10px_rgba(79,70,229,0.4)]">42</button>
+<button class="px-6 py-3 rounded-lg bg-surface-container-high text-on-surface-variant font-body font-semibold hover:bg-surface-container-highest transition-colors">43</button>
+<button class="px-6 py-3 rounded-lg bg-surface-container-high text-on-surface-variant font-body font-semibold hover:bg-surface-container-highest transition-colors opacity-50 cursor-not-allowed">44</button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mb-16">
+<!-- Primary CTA: Vibrant Minimalist Gradient -->
+<button class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 px-8 rounded-lg font-body font-bold text-lg hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
+<span class="material-symbols-outlined" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    Chat to Order
+                </button>
+<!-- Secondary CTA: Ghost Border -->
+<button class="flex-1 flex items-center justify-center gap-2 bg-transparent border border-outline-variant text-on-surface py-4 px-8 rounded-lg font-body font-bold text-lg hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                    Marketplace
+                </button>
+</div>
+<!-- Delivery Info (Minimal Text) -->
+<div class="border-t border-surface-container-low pt-8 flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-outline mt-0.5" data-icon="local_shipping">local_shipping</span>
+<div>
+<p class="font-body font-semibold text-sm text-on-surface">Free Standard Delivery</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">On all orders over Rp 1.500.000</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-outline mt-0.5" data-icon="assignment_return">assignment_return</span>
+<div>
+<p class="font-body font-semibold text-sm text-on-surface">30-Day Returns</p>
+<p class="font-body text-sm text-on-surface-variant mt-1">Not quite right? Return it hassle-free.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

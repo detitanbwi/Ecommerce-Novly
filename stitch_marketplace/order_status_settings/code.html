@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Settings - Wirodayan Direct</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-tint": "#4d44e3",
+                        "inverse-surface": "#2f3131",
+                        "outline": "#777587",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "tertiary-container": "#a44100",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "background": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#413f82",
+                        "primary-container": "#4f46e5",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#ffd2be",
+                        "on-background": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary": "#58579b",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#464555",
+                        "secondary-container": "#b6b4ff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#351000",
+                        "primary": "#3525cd",
+                        "outline-variant": "#c7c4d8",
+                        "tertiary": "#7e3000",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#e2dfff",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e2dfff",
+                        "on-secondary-container": "#454386",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "on-primary-container": "#dad7ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#140f54",
+                        "primary-fixed-dim": "#c3c0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: theme('colors.surface-container-lowest');
+            color: theme('colors.on-surface');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-lowest');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-high');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.surface-variant');
+        }
+    </style>
+</head>
+<body class="antialiased flex h-screen overflow-hidden bg-surface-container-lowest text-on-surface font-body">
+<!-- SideNavBar -->
+<aside aria-label="Sidebar" class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest bg-gray-50 dark:bg-gray-800/50 flex flex-col h-full p-4 space-y-2 no-shadow z-40 hidden md:flex border-r-0">
+<!-- Header -->
+<div class="flex items-center px-4 py-6 mb-4">
+<div class="h-10 w-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg mr-3 shadow-[0_15px_30px_-5px_rgba(79,70,229,0.04)]">
+                A
+            </div>
+<div>
+<h2 class="text-lg font-bold text-gray-900 dark:text-white leading-tight">Admin Panel</h2>
+<p class="font-['Manrope'] font-medium text-sm text-on-surface-variant">Wirodayan Direct</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-1 overflow-y-auto">
+<!-- Active Tab: Orders -->
+<a class="bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 rounded-md font-['Manrope'] font-medium text-sm flex items-center px-4 py-3 group hover:translate-x-1 transition-transform duration-200 Active: opacity-80 scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3 text-primary-container" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                Orders
+            </a>
+<!-- Inactive Tabs -->
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-['Manrope'] font-medium text-sm flex items-center px-4 py-3 rounded-md group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary-container transition-colors">inventory_2</span>
+                Stok
+            </a>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-['Manrope'] font-medium text-sm flex items-center px-4 py-3 rounded-md group hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant group-hover:text-primary-container transition-colors">settings</span>
+                Settings
+            </a>
+</nav>
+<!-- CTA / Footer -->
+<div class="mt-auto pt-4 space-y-2">
+<button class="w-full bg-primary-container text-on-primary rounded-md py-3 font-bold text-sm tracking-wide shadow-[0_15px_30px_-5px_rgba(79,70,229,0.04)] hover:bg-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined mr-2 text-sm">add</span>
+                New Product
+            </button>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-['Manrope'] font-medium text-sm flex items-center px-4 py-3 rounded-md group hover:translate-x-1 transition-transform duration-200 mt-2" href="#">
+<span class="material-symbols-outlined mr-3 text-on-surface-variant">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 bg-surface-container-lowest h-screen overflow-y-auto flex flex-col relative">
+<!-- Mobile Top Nav Bar (Simplified for Admin) -->
+<div class="md:hidden flex items-center justify-between px-6 py-4 max-w-screen-2xl mx-auto w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg fixed top-0 z-50 no-border shadow-sm shadow-indigo-500/5">
+<span class="text-xl font-extrabold tracking-tighter text-gray-900 dark:text-white uppercase">Wirodayan</span>
+<button class="text-gray-500 hover:text-indigo-600 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="p-8 md:p-12 mt-16 md:mt-0 max-w-7xl mx-auto w-full">
+<!-- Page Header -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface leading-none mb-2">Manage Orders</h1>
+<p class="font-body text-on-surface-variant text-base">Review and process recent incoming requests.</p>
+</div>
+<!-- Simple Filter/Search -->
+<div class="mt-6 md:mt-0 flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary-container transition-colors pointer-events-none">search</span>
+<input class="pl-8 py-2 bg-transparent border-0 border-b border-outline-variant/20 focus:border-b-2 focus:border-primary-container focus:ring-0 text-on-surface font-body text-sm w-48 md:w-64 transition-all pb-1 rounded-none placeholder:text-outline-variant" placeholder="Search orders..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Curated Order List (Table Alternative) -->
+<div class="space-y-6">
+<!-- List Header (Hidden on small mobile, visible on tablet+) -->
+<div class="hidden sm:grid sm:grid-cols-12 gap-4 px-6 text-xs font-bold uppercase tracking-widest text-outline-variant mb-4">
+<div class="col-span-2">Order ID</div>
+<div class="col-span-3">Customer</div>
+<div class="col-span-2">Date</div>
+<div class="col-span-2">Total</div>
+<div class="col-span-3 text-right">Action</div>
+</div>
+<!-- Order Item 1: Pending -->
+<div class="bg-surface-container-lowest p-6 transition-all group relative overflow-hidden flex flex-col sm:grid sm:grid-cols-12 gap-4 items-center rounded-none shadow-[0_15px_30px_-5px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.05)] border-b-0" style="background-color: var(--color-surface-container-lowest); position: relative; z-index: 10;">
+<!-- Pseudo background for tonal lift -->
+<div class="absolute inset-0 bg-surface-container-low -z-10 transform scale-95 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="col-span-2 w-full sm:w-auto font-body font-bold text-on-surface">#ORD-9082</div>
+<div class="col-span-3 w-full sm:w-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center text-on-surface-variant font-bold text-xs uppercase overflow-hidden">
+<img alt="Customer Avatar" class="w-full h-full object-cover" data-alt="close up portrait of young professional woman with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHWDWuA9onC7g84lwGAAxUt-FXSXYeQ2N4QWcOzzvmsZuDvzzXusUaLXjpJ10qP6T1kPgqdbsNPKyq3HrFq69Q29BEEHYweEdjQfoWA_IPXh8lwBJ10_74XJqnaYAYC9my7DFpdeP6dwhaZlMwJgjPgO4gVpwRPsL5A09Dh_ox_sO5WVHM4R3P_uBVuBtFlgRYNCFBzYjMPAo5kbD2zmDKNjCLr8guAXxYLmYv3tceY-ftvpHp1zwZQFitX_X3VxQeOr_Era-CgOzC"/>
+</div>
+<span class="font-body text-on-surface font-medium">Elena Rostova</span>
+</div>
+<div class="col-span-2 w-full sm:w-auto font-body text-sm text-on-surface-variant">Oct 24, 10:30 AM</div>
+<div class="col-span-2 w-full sm:w-auto font-headline font-bold text-on-surface text-lg">$1,240.00</div>
+<div class="col-span-3 w-full flex sm:justify-end gap-3 mt-4 sm:mt-0">
+<button class="px-4 py-2 bg-transparent text-error font-bold text-sm tracking-wide rounded-md border border-error/20 hover:bg-error/5 transition-colors flex-1 sm:flex-none text-center">Decline</button>
+<button class="px-4 py-2 bg-transparent text-primary-container font-bold text-sm tracking-wide rounded-md border border-primary-container/20 hover:bg-primary-container/5 transition-colors flex-1 sm:flex-none text-center">Accept</button>
+</div>
+</div>
+<!-- Order Item 2: Accepted -->
+<div class="bg-surface-container-lowest p-6 transition-all group relative overflow-hidden flex flex-col sm:grid sm:grid-cols-12 gap-4 items-center rounded-none shadow-[0_15px_30px_-5px_rgba(0,0,0,0.03)] border-b-0" style="background-color: var(--color-surface-container-lowest); position: relative; z-index: 10;">
+<div class="absolute inset-0 bg-surface-container-low -z-10 transform scale-95 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="col-span-2 w-full sm:w-auto font-body font-bold text-on-surface text-opacity-70">#ORD-9081</div>
+<div class="col-span-3 w-full sm:w-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center text-on-surface-variant font-bold text-xs uppercase overflow-hidden">
+<img alt="Customer Avatar" class="w-full h-full object-cover" data-alt="close up portrait of mature man with short beard and dark shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3SO_J8_mQz8UYIMdEJQcedZmaGjYNEda-21xFaJmKv5a9jO75ALkZZ0WkL0RzC1d3EjmxGU6g1rv2mdhKDguSFhkVUc6fS9rLEapUgot4d4zP2KhE4ALixGXDzyYE2O92PYClsMTgS4lUux7ji9msqfZLkmOGoFq1lV00w5IHjipGisYRlv4ibEd8sLlBs2vDgVkQ0k1l9do_vVeKi2NBUKRcKEPSuAElAFtQYfbcextcWXub9LwV6K_SkG-dVmm2h2vSQ7tTYTaI"/>
+</div>
+<span class="font-body text-on-surface font-medium text-opacity-70">Marcus Chen</span>
+</div>
+<div class="col-span-2 w-full sm:w-auto font-body text-sm text-on-surface-variant">Oct 23, 14:15 PM</div>
+<div class="col-span-2 w-full sm:w-auto font-headline font-bold text-on-surface text-lg text-opacity-70">$450.50</div>
+<div class="col-span-3 w-full flex sm:justify-end items-center gap-2 mt-4 sm:mt-0">
+<span class="flex items-center text-primary-container font-bold text-sm tracking-wide bg-primary-container/10 px-4 py-2 rounded-md">
+<span class="material-symbols-outlined text-[18px] mr-2" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Accepted
+                        </span>
+</div>
+</div>
+<!-- Order Item 3: Pending -->
+<div class="bg-surface-container-lowest p-6 transition-all group relative overflow-hidden flex flex-col sm:grid sm:grid-cols-12 gap-4 items-center rounded-none shadow-[0_15px_30px_-5px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.05)] border-b-0" style="background-color: var(--color-surface-container-lowest); position: relative; z-index: 10;">
+<div class="absolute inset-0 bg-surface-container-low -z-10 transform scale-95 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="col-span-2 w-full sm:w-auto font-body font-bold text-on-surface">#ORD-9080</div>
+<div class="col-span-3 w-full sm:w-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center text-on-surface-variant font-bold text-xs uppercase overflow-hidden">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+<span class="font-body text-on-surface font-medium">Sarah Jenkins</span>
+</div>
+<div class="col-span-2 w-full sm:w-auto font-body text-sm text-on-surface-variant">Oct 23, 09:05 AM</div>
+<div class="col-span-2 w-full sm:w-auto font-headline font-bold text-on-surface text-lg">$8,900.00</div>
+<div class="col-span-3 w-full flex sm:justify-end gap-3 mt-4 sm:mt-0">
+<button class="px-4 py-2 bg-transparent text-error font-bold text-sm tracking-wide rounded-md border border-error/20 hover:bg-error/5 transition-colors flex-1 sm:flex-none text-center">Decline</button>
+<button class="px-4 py-2 bg-transparent text-primary-container font-bold text-sm tracking-wide rounded-md border border-primary-container/20 hover:bg-primary-container/5 transition-colors flex-1 sm:flex-none text-center">Accept</button>
+</div>
+</div>
+<!-- Order Item 4: Declined -->
+<div class="bg-surface-container-lowest p-6 transition-all group relative overflow-hidden flex flex-col sm:grid sm:grid-cols-12 gap-4 items-center rounded-none shadow-[0_15px_30px_-5px_rgba(0,0,0,0.03)] border-b-0 opacity-60 grayscale-[50%]" style="background-color: var(--color-surface-container-lowest); position: relative; z-index: 10;">
+<div class="absolute inset-0 bg-surface-container-low -z-10 transform scale-95 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="col-span-2 w-full sm:w-auto font-body font-bold text-on-surface line-through decoration-outline-variant">#ORD-9079</div>
+<div class="col-span-3 w-full sm:w-auto flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex-shrink-0 flex items-center justify-center text-on-surface-variant font-bold text-xs uppercase overflow-hidden">
+<span class="material-symbols-outlined text-[16px]">person</span>
+</div>
+<span class="font-body text-on-surface font-medium">David Miller</span>
+</div>
+<div class="col-span-2 w-full sm:w-auto font-body text-sm text-on-surface-variant">Oct 22, 16:40 PM</div>
+<div class="col-span-2 w-full sm:w-auto font-headline font-bold text-on-surface text-lg">$120.00</div>
+<div class="col-span-3 w-full flex sm:justify-end items-center gap-2 mt-4 sm:mt-0">
+<span class="flex items-center text-error font-bold text-sm tracking-wide bg-error/10 px-4 py-2 rounded-md">
+<span class="material-symbols-outlined text-[18px] mr-2">cancel</span>
+                           Declined
+                       </span>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More (Minimalist) -->
+<div class="mt-12 flex justify-center">
+<button class="bg-transparent text-on-surface font-bold text-sm tracking-widest uppercase border-b-2 border-primary-container pb-1 hover:text-primary-container transition-colors">Load More</button>
+</div>
+</div>
+</main>
+</body></html>
