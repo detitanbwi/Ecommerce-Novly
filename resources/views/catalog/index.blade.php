@@ -40,12 +40,12 @@
                                 @endforeach
                             </div>
 
-                            @if(count($product->images) > 1)
+                        @if(count($product->images) > 1)
                                 <!-- Slideshow Dots -->
-                                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                                     @foreach(array_slice($product->images, 0, 3) as $index => $image)
                                         <div
-                                            class="w-1.5 h-1.5 rounded-full bg-white/40 ring-1 ring-black/5 slideshow-dot-{{ $product->id }} {{ $index === 0 ? 'bg-white scale-125' : '' }}">
+                                            class="w-1.5 h-1.5 rounded-full bg-white/50 shadow-sm slideshow-dot-{{ $product->id }} {{ $index === 0 ? 'bg-white scale-125' : '' }}">
                                         </div>
                                     @endforeach
                                 </div>
@@ -53,23 +53,32 @@
                         @else
                             <div class="flex items-center justify-center w-full h-full text-slate-300 font-medium">No Image</div>
                         @endif
-
-                        <div
-                            class="absolute top-5 left-5 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-[10px] font-bold text-indigo-700 uppercase tracking-widest shadow-sm z-20">
-                            {{ $product->category->name }}
-                        </div>
                     </div>
 
                     <!-- Info Container -->
-                    <div class="p-7 flex flex-col flex-1">
-                        <h3
-                            class="font-bold text-xl text-slate-900 leading-tight mb-2 group-hover:text-indigo-600 transition-colors">
-                            {{ $product->title }}</h3>
-                        <p class="text-slate-500 text-[14px] font-normal leading-relaxed mb-6 flex-1">
-                            {{ Str::limit(strip_tags($product->description), 85) }}</p>
+                    <div class="px-7 pb-7 pt-3 flex flex-col flex-1">
+                        @php
+                            $badgeClasses = [
+                                'books' => 'bg-blue-100 text-blue-700',
+                                'property' => 'bg-orange-100 text-orange-700',
+                                'digital-invitations' => 'bg-purple-100 text-purple-700',
+                                'chicken-coops' => 'bg-slate-100 text-slate-600',
+                            ];
+                            $currentBadge = $badgeClasses[$product->category->slug] ?? 'bg-slate-100 text-slate-600';
+                        @endphp
 
-                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
-                            <span class="text-xl font-bold text-slate-900 tracking-tight">Rp
+                        <div class="mb-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider {{ $currentBadge }}">
+                                {{ $product->category->name }}
+                            </span>
+                        </div>
+
+                        <h3
+                            class="text-base font-semibold text-slate-800 leading-tight mb-1 group-hover:text-indigo-600 transition-colors">
+                            {{ $product->title }}</h3>
+
+                        <div class="mt-auto pt-2">
+                            <span class="text-lg font-bold text-indigo-600 tracking-tight">Rp
                                 {{ number_format($product->price, 0, ',', '.') }}</span>
                         </div>
                     </div>
