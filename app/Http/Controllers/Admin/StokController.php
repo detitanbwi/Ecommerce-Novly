@@ -33,9 +33,9 @@ class StokController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:5120',
         ]);
 
-        $data = $request->only(['title', 'category_id', 'price', 'description']);
+        $data = $request->only(['title', 'category_id', 'price', 'description', 'external_links']);
         $data['slug'] = Str::slug($request->title) . '-' . time();
-        $data['is_active'] = $request->has('is_active');
+        $data['is_active'] = $request->boolean('is_active');
         
         $imagePaths = [];
         for ($i = 0; $i < 3; $i++) {
@@ -71,8 +71,8 @@ class StokController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:5120',
         ]);
         
-        $data = $request->only(['title', 'category_id', 'price', 'description']);
-        $data['is_active'] = $request->has('is_active');
+        $data = $request->only(['title', 'category_id', 'price', 'description', 'external_links']);
+        $data['is_active'] = $request->boolean('is_active');
 
         $finalImages = [];
         $existing = $request->input('existing_images', []);

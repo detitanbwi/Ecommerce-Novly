@@ -66,6 +66,10 @@
                     <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Link Tokopedia (Opsional)</label>
                     <input type="url" name="external_links[tokopedia]" value="{{ old('external_links.tokopedia') }}" placeholder="https://tokopedia.com/..." class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all font-medium text-slate-700">
                 </div>
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Link Marketplace Lainnya (Opsional)</label>
+                    <input type="url" name="external_links[others]" value="{{ old('external_links.others') }}" placeholder="https://..." class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all font-medium text-slate-700">
+                </div>
             </div>
         </div>
     </div>
