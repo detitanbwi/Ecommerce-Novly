@@ -29,17 +29,23 @@ class DatabaseSeeder extends Seeder
             'Lain-Lain'
         ];
 
+        // Clean Slate
+        \App\Models\Category::query()->delete();
+
         foreach ($categories as $category) {
-            \App\Models\Category::create([
-                'name' => $category,
-                'slug' => \Illuminate\Support\Str::slug($category)
-            ]);
+            \App\Models\Category::updateOrCreate(
+                ['slug' => \Illuminate\Support\Str::slug($category)],
+                ['name' => $category]
+            );
         }
 
+        // Run Product Seeder
+        $this->call(ProductSeeder::class);
+
         // Settings
-        \App\Models\Setting::create([
-            'key' => 'whatsapp_number',
-            'value' => '6281234567890' // Default WA
-        ]);
+        \App\Models\Setting::updateOrCreate(
+            ['key' => 'whatsapp_number'],
+            ['value' => '6281234567890']
+        );
     }
 }
