@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
 
         $products = [
             [
-                'category_id' => $categories->where('name', 'Books')->first()->id,
+                'category_id' => $categories->where('name', 'Buku')->first()->id,
                 'title' => 'The Minimalist Entrepreneur',
                 'slug' => 'the-minimalist-entrepreneur',
                 'price' => 150000,
@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 'external_links' => ['shopee' => 'https://shopee.co.id', 'tokopedia' => 'https://tokopedia.com'],
             ],
             [
-                'category_id' => $categories->where('name', 'Property')->first()->id,
+                'category_id' => $categories->where('name', 'Properti')->first()->id,
                 'title' => 'Tanah Kavling Wirodayan Residence',
                 'slug' => 'tanah-kavling-wirodayan-residence',
                 'price' => 250000000,
@@ -34,7 +34,7 @@ class ProductSeeder extends Seeder
                 'external_links' => ['tokopedia' => 'https://tokopedia.com'],
             ],
             [
-                'category_id' => $categories->where('name', 'Digital Invitations')->first()->id,
+                'category_id' => $categories->where('name', 'Lain-Lain')->first()->id,
                 'title' => 'Modern Wedding Invitation Kit',
                 'slug' => 'modern-wedding-invitation-kit',
                 'price' => 50000,
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 'external_links' => ['shopee' => 'https://shopee.co.id'],
             ],
             [
-                'category_id' => $categories->where('name', 'Chicken Coops')->first()->id,
+                'category_id' => $categories->where('name', 'Lain-Lain')->first()->id,
                 'title' => 'Luxury Designer Chicken Coop',
                 'slug' => 'luxury-designer-chicken-coop',
                 'price' => 3500000,

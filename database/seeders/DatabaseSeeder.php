@@ -24,10 +24,9 @@ class DatabaseSeeder extends Seeder
 
         // Categories
         $categories = [
-            'Books',
-            'Property',
-            'Digital Invitations',
-            'Chicken Coops'
+            'Buku',
+            'Properti',
+            'Lain-Lain'
         ];
 
         foreach ($categories as $category) {

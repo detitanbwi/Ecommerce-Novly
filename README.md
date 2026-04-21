@@ -8,63 +8,37 @@ A premium, high-contrast, artistic e-commerce platform built with Laravel 11.
 - MySQL 8.0+ or MariaDB 10.4+
 - Nginx or Apache with `mod_rewrite` enabled
 
-## 🚀 Deployment Steps (Production)
+## 🚀 Quick Setup (Copy & Paste to Terminal)
 
-### 1. Upload & Install
-Clone the repository to your server and navigate to the root directory:
 ```bash
-git clone https://github.com/detitanbwi/Ecommerce-Novly.git .
+# 1. Install dependencies
 composer install --optimize-autoloader --no-dev
-```
 
-### 2. Environment Configuration
-Copy `.env.example` to `.env` and update the following:
-```env
-APP_NAME="Wirodayan Direct"
-APP_ENV=production
-APP_DEBUG=false
-APP_URL=https://your-domain.com
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_db_name
-DB_USERNAME=your_db_user
-DB_PASSWORD=your_db_password
-```
-Generate the application key:
-```bash
+# 2. Environment setup
+cp .env.example .env
 php artisan key:generate
-```
 
-### 3. Permissions
-Ensure the web server has write access to:
-```bash
-chmod -R 775 storage bootstrap/cache
-chown -R www-data:www-data . # For Ubuntu/Nginx
-```
-
-### 4. Database Initialization
-Run migrations and seed the initial categories and admin account:
-```bash
+# 3. Database & Storage Initialization
+# Ensure DB credentials in .env are correct before running this!
 php artisan migrate --force --seed
-```
-*Note: Default admin: `admin@novly.com` / `password`.*
-
-### 5. Media & Storage Link
-Initialize the storage system:
-```bash
 php artisan storage:link
 ```
-If you are on a local Windows server (XAMPP), use the Junction command:
-`mklink /J public\storage storage\app\public`
 
-### 6. Production Optimization
-Run these commands to speed up the application:
+## 🛠️ Production Optimization
 ```bash
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+```
+
+## 🔐 Default Admin Account
+- **Email:** `admin@novly.com`
+- **Password:** `password`
+
+## 📂 Permissions (Linux Servers)
+```bash
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data .
 ```
 
 ## 🛠️ Web Server Configuration
