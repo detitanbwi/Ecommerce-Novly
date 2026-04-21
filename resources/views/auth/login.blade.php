@@ -13,6 +13,12 @@
     <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 w-full max-w-sm">
         <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Admin Login</h2>
         
+        @if(session('error'))
+            <div class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm font-medium border border-red-100">
+                {{ session('error') }}
+            </div>
+        @endif
+        
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
             <div class="mb-4">
