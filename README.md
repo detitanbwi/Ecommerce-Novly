@@ -32,6 +32,7 @@ php artisan view:cache
 ```
 
 ## 🔐 Default Admin Account
+- **URL:** `/login`
 - **Email:** `admin@novly.com`
 - **Password:** `password`
 
