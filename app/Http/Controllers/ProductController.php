@@ -23,9 +23,16 @@ class ProductController extends Controller
         return view('catalog.index', compact('products'));
     }
 
-    public function show($slug)
+    public function show($identifier)
     {
-        $product = Product::with('category')->where('is_active', true)->where('slug', $slug)->firstOrFail();
+        $product = Product::with('category')
+            ->where('is_active', true)
+            ->where(function($q) use ($identifier) {
+                $q->where('id', $identifier)
+                  ->orWhere('slug', $identifier);
+            })
+            ->firstOrFail();
+
         return view('catalog.show', compact('product'));
     }
 }

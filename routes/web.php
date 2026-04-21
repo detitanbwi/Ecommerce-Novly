@@ -8,7 +8,7 @@ use App\Http\Controllers\ProductController;
 
 // Frontend
 Route::get('/', [ProductController::class, 'index'])->name('home');
-Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/{identifier}', [ProductController::class, 'show'])->name('product.show');
 
 // Admin Auth
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

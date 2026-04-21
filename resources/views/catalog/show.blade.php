@@ -69,7 +69,7 @@
                 <div class="space-y-4 mt-auto">
                     @php
                         $waNumber = \App\Models\Setting::where('key', 'whatsapp_number')->value('value') ?? '';
-                        $message = "Halo Wirodayan, saya tertarik untuk memesan produk ini:\n\n*{$product->title}*\nHarga: Rp " . number_format($product->price, 0, ',', '.') . "\nLink: " . route('product.show', $product);
+                        $message = "Halo Wirodayan, saya tertarik untuk memesan produk ini:\n\n*{$product->title}*\nHarga: Rp " . number_format($product->price, 0, ',', '.') . "\nLink: " . route('product.show', $product->slug ?: $product->id);
                         $waLink = "https://wa.me/{$waNumber}?text=" . urlencode($message);
                     @endphp
 

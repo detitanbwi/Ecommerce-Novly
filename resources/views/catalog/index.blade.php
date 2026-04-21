@@ -28,7 +28,7 @@
         <!-- Product Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
             @forelse($products as $product)
-                <a href="{{ route('product.show', $product) }}" class="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
+                <a href="{{ route('product.show', $product->slug ?: $product->id) }}" class="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
 
                     <!-- Image Slideshow Container -->
                     <div class="aspect-[4/5] bg-slate-100 overflow-hidden relative">
