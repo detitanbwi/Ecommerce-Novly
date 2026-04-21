@@ -1,4 +1,4 @@
-# Wirodayan Direct Marketplace - Production Setup Guide
+# Klabat Online Marketplace - Production Setup Guide
 
 A premium, high-contrast, artistic e-commerce platform built with Laravel 11. 
 

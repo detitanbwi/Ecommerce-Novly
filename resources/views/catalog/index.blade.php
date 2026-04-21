@@ -4,10 +4,9 @@
 
 @section('content')
     <div class="mb-12">
-        <h1 class="text-4xl font-bold text-slate-900 tracking-tight mb-3">Jelajahi Koleksi <span
-                class="text-indigo-600">Terbaik</span> Kami.</h1>
-        <p class="text-lg font-normal text-slate-500 leading-relaxed max-w-2xl">Beli produk fisik dan digital secara
-            langsung. Pilih pesanan Anda, konfirmasi via WhatsApp, dan selesaikan tanpa ribet membuat akun.</p>
+        <h1 class="text-4xl font-bold text-slate-900 tracking-tight mb-3">Belanja Jadi Lebih <span
+                class="text-indigo-600">Mudah</span></h1>
+        <p class="text-lg font-normal text-slate-500 leading-relaxed max-w-2xl">Pilih produk fisik atau digital, konfirmasi via WhatsApp, dan selesai dalam hitungan menit tanpa perlu daftar akun.</p>
     </div>
 
     <!-- Category Filter -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Wirodayan Direct</title>
+    <title>Admin - Klabat Online</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <!-- Sidebar -->
     <aside class="w-64 bg-white border-r border-slate-200 flex flex-col sticky top-0 h-screen">
         <div class="p-8">
-            <a href="/" class="text-2xl font-bold tracking-tight text-indigo-600">Wirodayan<span class="text-slate-900">.</span></a>
+            <a href="/" class="text-2xl font-bold tracking-tight text-indigo-600">Klabat Online<span class="text-slate-900">.</span></a>
         </div>
         
         <nav class="flex-1 px-4 space-y-2">

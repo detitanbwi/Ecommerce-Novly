@@ -26,8 +26,8 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => $categories->where('name', 'Properti')->first()->id,
-                'title' => 'Tanah Kavling Wirodayan Residence',
-                'slug' => 'tanah-kavling-wirodayan-residence',
+                'title' => 'Tanah Kavling Klabat Online Residence',
+                'slug' => 'tanah-kavling-klabat-online-residence',
                 'price' => 250000000,
                 'description' => "Miliki aset berharga di lokasi yang sedang berkembang pesat. Tanah kavling siap bangun dengan sertifikat lengkap dan akses jalan aspal.\n\nFasilitas:\n- Dekat dengan pusat perbelanjaan.\n- Bebas banjir.\n- Lingkungan asri dan tenang.\n- Ukuran bervariasi mulai 100m2.",
                 'images' => ['img/products/property.png', 'img/products/property.png'],
