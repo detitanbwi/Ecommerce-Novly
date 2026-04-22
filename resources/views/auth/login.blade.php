@@ -9,8 +9,8 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 w-full max-w-sm">
+<body class="bg-green-50 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-green-100 w-full max-w-sm">
         <h2 class="text-2xl font-bold text-slate-900 mb-6 text-center">Admin Login</h2>
         
         @if(session('error'))
@@ -23,16 +23,16 @@
             @csrf
             <div class="mb-4">
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-                <input type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required autofocus>
+                <input type="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent" required autofocus>
                 @error('email') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>
 
             <div class="mb-6">
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Password</label>
-                <input type="password" name="password" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required>
+                <input type="password" name="password" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent" required>
             </div>
 
-            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200">
+            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200">
                 Sign In
             </button>
         </form>
