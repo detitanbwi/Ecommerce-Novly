@@ -59,4 +59,4 @@ location / {
 This project is pre-configured with a root `index.php` and `.htaccess` to support running from any directory. If your server doesn't allow changing the document root to `/public`, the application will still work seamlessly from the root folder.
 
 ---
-Developed by **Antigravity** for Novly Ecommerce.
+Developed by **Wirodev** for Novly Klabat Ecommerce.
