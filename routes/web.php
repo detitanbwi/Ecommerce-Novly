@@ -37,4 +37,5 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     
     Route::get('/settings', [SettingController::class, 'index'])->name('admin.settings');
     Route::post('/settings', [SettingController::class, 'update'])->name('admin.settings.update');
+    Route::post('/settings/password', [SettingController::class, 'updatePassword'])->name('admin.settings.password');
 });
