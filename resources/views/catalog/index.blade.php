@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="mb-12">
-        <h1 class="text-4xl font-bold text-slate-900 tracking-tight mb-3">Belanja Jadi Lebih <span
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Belanja Jadi Lebih <span
                 class="text-emerald-600">Mudah</span></h1>
         <p class="text-lg font-normal text-emerald-800/70 leading-relaxed max-w-2xl">Pilih produk fisik atau digital, konfirmasi via WhatsApp, dan selesai dalam hitungan menit tanpa perlu daftar akun.</p>
     </div>
@@ -25,9 +25,9 @@
 
     <div id="product-section" class="transition-opacity duration-300">
         <!-- Product Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
+        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12">
             @forelse($products as $product)
-                <a href="{{ route('product.show', $product->slug ?: $product->id) }}" class="bg-white rounded-[2.5rem] border border-green-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
+                <a href="{{ route('product.show', $product->slug ?: $product->id) }}" class="bg-white rounded-3xl md:rounded-[2.5rem] border border-green-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
 
                     <!-- Image Slideshow Container -->
                     <div class="aspect-[4/5] bg-slate-100 overflow-hidden relative">
@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- Info Container -->
-                    <div class="px-7 pb-7 pt-3 flex flex-col flex-1">
+                    <div class="px-4 pb-5 pt-3 md:px-7 md:pb-7 flex flex-col flex-1">
                         @php
                             $badgeClasses = [
                                 'books' => 'bg-blue-100 text-blue-700',
@@ -73,11 +73,11 @@
                         </div>
 
                         <h3
-                            class="text-base font-semibold text-slate-800 leading-tight mb-1 group-hover:text-emerald-600 transition-colors">
+                            class="text-sm md:text-base font-semibold text-slate-800 leading-tight mb-1 group-hover:text-emerald-600 transition-colors line-clamp-2">
                             {{ $product->title }}</h3>
 
                         <div class="mt-auto pt-2">
-                            <span class="text-lg font-bold text-emerald-600 tracking-tight">Rp
+                            <span class="text-base md:text-lg font-bold text-emerald-600 tracking-tight">Rp
                                 {{ number_format($product->price, 0, ',', '.') }}</span>
                         </div>
                     </div>
@@ -165,10 +165,10 @@
                     const btnSlug = btn.getAttribute('data-slug');
                     if (btnSlug === currentCategory) {
                         btn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
-                        btn.classList.remove('bg-white', 'text-slate-800', 'border', 'border-green-200');
+                        btn.classList.remove('bg-white', 'text-slate-800', 'border', 'border-green-200', 'hover:border-emerald-600', 'hover:text-emerald-600');
                     } else {
                         btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
-                        btn.classList.add('bg-white', 'text-slate-800', 'border', 'border-green-200');
+                        btn.classList.add('bg-white', 'text-slate-800', 'border', 'border-green-200', 'hover:border-emerald-600', 'hover:text-emerald-600');
                     }
                 });
             }
