@@ -10,6 +10,14 @@ use App\Http\Controllers\ProductController;
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::get('/product/{identifier}', [ProductController::class, 'show'])->name('product.show');
 
+// Sitemap
+Route::get('/sitemap.xml', function () {
+    $products = \App\Models\Product::where('is_active', true)->get();
+    return response()->view('sitemap', [
+        'products' => $products
+    ])->header('Content-Type', 'text/xml');
+});
+
 // Admin Auth
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
