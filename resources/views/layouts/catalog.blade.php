@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klabat Online - Platform belanja cerdas untuk produk fisik dan digital di Minahasa Utara. Beli buku, properti, undangan digital, kandang ayam cepat & aman tanpa daftar akun.">
+    <meta name="keywords" content="Klabat Online, e-commerce Minahasa Utara, beli produk digital, beli buku online, jual beli properti Minahasa, undangan digital, kandang ayam, belanja tanpa daftar, toko online terpercaya">
     <title>@yield('title', 'Katalog') - Klabat Online</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
