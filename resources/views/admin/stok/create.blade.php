@@ -125,6 +125,13 @@
 
                 function handleImage(input, index) {
                     if (input.files && input.files[0]) {
+                        // Check if file is too large (e.g. > 7MB for individual file to be safe)
+                        if (input.files[0].size > 7 * 1024 * 1024) {
+                            alert('File terlalu besar! Maksimal 7MB per gambar.');
+                            input.value = '';
+                            return;
+                        }
+
                         const reader = new FileReader();
                         reader.onload = function(e) {
                             document.getElementById('preview-' + index).src = e.target.result;
@@ -157,6 +164,23 @@
                 // Close on ESC
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape') closePreview();
+                });
+
+                // Total size validation on submit
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    let totalSize = 0;
+                    const inputs = document.querySelectorAll('input[type="file"]');
+                    inputs.forEach(input => {
+                        if (input.files && input.files[0]) {
+                            totalSize += input.files[0].size;
+                        }
+                    });
+
+                    // If total size > 8MB (server limit usually 8MB or 10MB)
+                    if (totalSize > 8 * 1024 * 1024) {
+                        e.preventDefault();
+                        alert('Total ukuran file terlalu besar! Silakan kurangi ukuran gambar atau upload lebih sedikit gambar. (Maksimal total 8MB)');
+                    }
                 });
             </script>
 

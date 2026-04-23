@@ -111,39 +111,39 @@ class StokController extends Controller
         $path = 'products/' . $filename;
         
         // Use GD to optimize/convert to WebP
-        $imageInfo = getimagesize($file);
+        $imageInfo = \getimagesize($file);
         $mime = $imageInfo['mime'];
         
         switch ($mime) {
-            case 'image/jpeg': $img = imagecreatefromjpeg($file); break;
-            case 'image/png':  $img = imagecreatefrompng($file); break;
-            case 'image/webp': $img = imagecreatefromwebp($file); break;
+            case 'image/jpeg': $img = \imagecreatefromjpeg($file); break;
+            case 'image/png':  $img = \imagecreatefrompng($file); break;
+            case 'image/webp': $img = \imagecreatefromwebp($file); break;
             default: return $file->store('products', 'public');
         }
 
         // Resize if too large (max width 1200)
-        $width = imagesx($img);
-        $height = imagesy($img);
+        $width = \imagesx($img);
+        $height = \imagesy($img);
         $maxSize = 1200;
         
         if ($width > $maxSize) {
             $newWidth = $maxSize;
             $newHeight = ($height / $width) * $maxSize;
-            $tmp = imagecreatetruecolor($newWidth, $newHeight);
+            $tmp = \imagecreatetruecolor($newWidth, $newHeight);
             
-            imagealphablending($tmp, false);
-            imagesavealpha($tmp, true);
+            \imagealphablending($tmp, false);
+            \imagesavealpha($tmp, true);
             
-            imagecopyresampled($tmp, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-            imagedestroy($img);
+            \imagecopyresampled($tmp, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+            \imagedestroy($img);
             $img = $tmp;
         }
 
         // Buffer the output
-        ob_start();
-        imagewebp($img, null, 75); // 75 quality is very lightweight but still clear
-        $content = ob_get_clean();
-        imagedestroy($img);
+        \ob_start();
+        \imagewebp($img, null, 75); // 75 quality is very lightweight but still clear
+        $content = \ob_get_clean();
+        \imagedestroy($img);
 
         \Illuminate\Support\Facades\Storage::disk('public')->put($path, $content);
         
