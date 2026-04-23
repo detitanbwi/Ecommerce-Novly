@@ -13,20 +13,20 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800 flex">
+<body class="bg-green-50 min-h-screen text-slate-800 flex">
     
     <!-- Sidebar -->
     <aside class="w-64 bg-white border-r border-slate-200 flex flex-col sticky top-0 h-screen">
         <div class="p-8">
-            <a href="/" class="text-2xl font-bold tracking-tight text-slate-900">Klabat Online<span class="text-emerald-500">.</span></a>
+            <a href="/" class="text-2xl font-bold tracking-tight text-emerald-600">Klabat Online<span class="text-slate-900">.</span></a>
         </div>
         
         <nav class="flex-1 px-4 space-y-2">
-            <a href="{{ route('admin.stok') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all {{ request()->routeIs('admin.stok*') ? 'bg-slate-900 text-white shadow-lg shadow-slate-200' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900' }}">
+            <a href="{{ route('admin.stok') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all {{ request()->routeIs('admin.stok*') ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-100' : 'text-slate-600 hover:bg-slate-50 hover:text-emerald-600' }}">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 Stok Produk
             </a>
-            <a href="{{ route('admin.settings') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all {{ request()->routeIs('admin.settings*') ? 'bg-slate-900 text-white shadow-lg shadow-slate-200' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900' }}">
+            <a href="{{ route('admin.settings') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all {{ request()->routeIs('admin.settings*') ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-100' : 'text-slate-600 hover:bg-slate-50 hover:text-emerald-600' }}">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
                 Settings
             </a>

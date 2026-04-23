@@ -5,19 +5,19 @@
 @section('content')
     <div class="mb-12">
         <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-3">Belanja Jadi Lebih <span
-                class="text-emerald-500">Mudah</span></h1>
-        <p class="text-lg font-medium text-slate-500 leading-relaxed max-w-2xl">Pilih produk fisik atau digital, konfirmasi via WhatsApp, dan selesai dalam hitungan menit tanpa perlu daftar akun.</p>
+                class="text-emerald-600">Mudah</span></h1>
+        <p class="text-lg font-normal text-emerald-800/70 leading-relaxed max-w-2xl">Pilih produk fisik atau digital, konfirmasi via WhatsApp, dan selesai dalam hitungan menit tanpa perlu daftar akun.</p>
     </div>
 
     <!-- Category Filter -->
     <div class="flex items-center gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide" id="category-filters">
         <a href="?category=" data-slug=""
-            class="category-btn whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all {{ !request('category') ? 'bg-slate-900 text-white shadow-lg shadow-slate-200' : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-900 hover:text-slate-900' }}">
+            class="category-btn whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all {{ !request('category') ? 'bg-emerald-600 text-white shadow-md' : 'bg-white text-slate-800 border border-green-200 hover:border-emerald-600 hover:text-emerald-600' }}">
             Semua
         </a>
         @foreach(\App\Models\Category::all() as $category)
             <a href="?category={{ $category->slug }}" data-slug="{{ $category->slug }}"
-                class="category-btn whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all {{ request('category') == $category->slug ? 'bg-slate-900 text-white shadow-lg shadow-slate-200' : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-900 hover:text-slate-900' }}">
+                class="category-btn whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-semibold transition-all {{ request('category') == $category->slug ? 'bg-emerald-600 text-white shadow-md' : 'bg-white text-slate-800 border border-green-200 hover:border-emerald-600 hover:text-emerald-600' }}">
                 {{ $category->name }}
             </a>
         @endforeach
@@ -27,7 +27,7 @@
         <!-- Product Grid -->
         <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-12">
             @forelse($products as $product)
-                <a href="{{ route('product.show', $product->slug ?: $product->id) }}" class="bg-white rounded-3xl md:rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
+                <a href="{{ route('product.show', $product->slug ?: $product->id) }}" class="bg-white rounded-3xl md:rounded-[2.5rem] border border-green-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 overflow-hidden group flex flex-col relative">
 
                     <!-- Image Slideshow Container -->
                     <div class="aspect-[4/5] bg-slate-100 overflow-hidden relative">
@@ -164,11 +164,11 @@
                 document.querySelectorAll('.category-btn').forEach(btn => {
                     const btnSlug = btn.getAttribute('data-slug');
                     if (btnSlug === currentCategory) {
-                        btn.classList.add('bg-slate-900', 'text-white', 'shadow-lg', 'shadow-slate-200');
-                        btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:border-slate-900', 'hover:text-slate-900');
+                        btn.classList.add('bg-emerald-600', 'text-white', 'shadow-md');
+                        btn.classList.remove('bg-white', 'text-slate-800', 'border', 'border-green-200', 'hover:border-emerald-600', 'hover:text-emerald-600');
                     } else {
-                        btn.classList.remove('bg-slate-900', 'text-white', 'shadow-lg', 'shadow-slate-200');
-                        btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200', 'hover:border-slate-900', 'hover:text-slate-900');
+                        btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-md');
+                        btn.classList.add('bg-white', 'text-slate-800', 'border', 'border-green-200', 'hover:border-emerald-600', 'hover:text-emerald-600');
                     }
                 });
             }
