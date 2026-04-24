@@ -17,6 +17,14 @@ class ProductController extends Controller
                 $q->where('slug', $request->category);
             });
         }
+
+        if ($request->search) {
+            $searchTerm = $request->search;
+            $query->where(function($q) use ($searchTerm) {
+                $q->where('title', 'like', "%{$searchTerm}%")
+                  ->orWhere('description', 'like', "%{$searchTerm}%");
+            });
+        }
         
         $products = $query->paginate(12);
         
